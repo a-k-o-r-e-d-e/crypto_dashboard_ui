@@ -1,7 +1,13 @@
+import 'package:crypto_dashboard_ui/models/coin.dart';
 import 'package:flutter/material.dart';
 import 'package:crypto_dashboard_ui/utils/extensions.dart';
 
 class CoinBalance extends StatelessWidget {
+
+  final Coin coin;
+
+  CoinBalance({@required this.coin});
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -21,12 +27,12 @@ class CoinBalance extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Your BTC Balance",
+                  "Your ${coin.coinAbbr} Balance",
                   style: theme.textTheme.caption,
                 ),
                 SizedBox(height: 8),
                 Text(
-                    "0.006992133 BTC",
+                    "${coin.balance} ${coin.coinAbbr}",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18
@@ -44,7 +50,7 @@ class CoinBalance extends StatelessWidget {
                 style: theme.textTheme.caption,
               ),
               SizedBox(height: 8),
-              Text("\$23.35", style: TextStyle(color: Colors.white, fontSize: 18),)
+              Text("\$${coin.balanceValue.toStringAsFixed(4)}", style: TextStyle(color: Colors.white, fontSize: 18),)
             ],
           )
         ],

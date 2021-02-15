@@ -61,18 +61,18 @@ class CoinCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        coin.progress,
+                        coin.priceProgress,
                         style: TextStyle(
-                            color: coin.trend == Trend.UP
+                            color: coin.priceTrend == Trend.UP
                                 ? kSuccessColor
                                 : kDangerColor),
                       ),
                       Icon(
-                        coin.trend == Trend.UP
+                        coin.priceTrend == Trend.UP
                             ? FlutterIcons.caret_up_faw
                             : FlutterIcons.caret_down_faw,
                         size: 14,
-                        color: coin.trend == Trend.UP
+                        color: coin.priceTrend == Trend.UP
                             ? kSuccessColor
                             : kDangerColor,
                       )

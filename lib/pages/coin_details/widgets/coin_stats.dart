@@ -1,8 +1,13 @@
+import 'package:crypto_dashboard_ui/models/coin.dart';
 import 'package:crypto_dashboard_ui/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class CoinStats extends StatelessWidget {
+  final Coin coin;
+
+  CoinStats({@required this.coin});
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -16,14 +21,14 @@ class CoinStats extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "1 BTC / USD",
+                "1 ${coin.coinAbbr} / USD",
                 style: theme.textTheme.caption,
               ),
               SizedBox(
                 height: 8
               ),
               Text(
-                "\$3,432.92",
+                "\$${coin.currentPrice}",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 26
@@ -32,15 +37,15 @@ class CoinStats extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "+0.15%",
+                    "${coin.priceProgress}%",
                     style: TextStyle(
-                      color: kSuccessColor,
+                      color: coin.priceTrend == Trend.UP ? kSuccessColor : kDangerColor,
                       fontSize: 16,
                     ),
                   ),
                   Icon(
-                    FlutterIcons.caret_up_faw,
-                    color: kSuccessColor,
+                    coin.priceTrend == Trend.UP ? FlutterIcons.caret_up_faw : FlutterIcons.caret_down_faw,
+                    color: coin.priceTrend == Trend.UP ? kSuccessColor : kDangerColor,
                   )
                 ],
               )
@@ -52,7 +57,7 @@ class CoinStats extends StatelessWidget {
                 Text("Volume 24h USD", style: theme.textTheme.caption),
                 SizedBox(height: 8,),
                 Text(
-                  "\$1,360,647.31",
+                  "\$${coin.volume24Hr}",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 26
@@ -61,12 +66,16 @@ class CoinStats extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "+16.80%",
+                      "${coin.volumeProgress}",
                       style: TextStyle(
-                        color: kSuccessColor, fontSize: 16
+                          color: coin.volumeTrend == Trend.UP ? kSuccessColor : kDangerColor,
+                          fontSize: 16
                       ),
                     ),
-                    Icon(FlutterIcons.caret_up_faw, color: kSuccessColor,)
+                    Icon(
+                      coin.volumeTrend == Trend.UP ? FlutterIcons.caret_up_faw : FlutterIcons.caret_down_faw,
+                      color: coin.volumeTrend == Trend.UP ? kSuccessColor : kDangerColor,
+                    )
                   ],
                 )
               ],
