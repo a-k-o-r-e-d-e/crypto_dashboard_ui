@@ -1,5 +1,5 @@
 import 'package:crypto_dashboard_ui/models/coin.dart';
-import 'package:crypto_dashboard_ui/pages/coin_detail/widgets/single_coin.dart';
+import 'package:crypto_dashboard_ui/pages/coin_details/coin_details_page.dart';
 import 'package:crypto_dashboard_ui/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:crypto_dashboard_ui/utils/extensions.dart';
@@ -20,7 +20,7 @@ class CoinCard extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (_) => SingleCoin(coin: coin,)));
+              context, MaterialPageRoute(builder: (_) => CoinDetailsPage(coin: coin,)));
         },
         child: Container(
           color: Color.fromRGBO(55, 66, 92, .4),

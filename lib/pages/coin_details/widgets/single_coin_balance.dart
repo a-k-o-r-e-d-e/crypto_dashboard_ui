@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:crypto_dashboard_ui/utils/extensions.dart';
 
-class SingleCoinBalance extends StatelessWidget {
+class CoinBalance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);

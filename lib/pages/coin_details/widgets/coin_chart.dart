@@ -16,7 +16,9 @@ class _CoinChartState extends State<CoinChart> {
   // Keep track of active index
   int activeIndex = 1;
 
-  final List sampleData = List.generate(25, (index) {
+  final sampleDateLength = 25;
+
+  List sampleData () => List.generate(sampleDateLength, (index) {
     double open = Random().nextDouble() * 100;
     double low = Random().nextDouble() * 50;
     double close = Random().nextDouble() * 150;
@@ -67,9 +69,9 @@ class _CoinChartState extends State<CoinChart> {
           height: 200,
           // Graph
           child: OHLCVGraph(
-            data: sampleData,
+            data: sampleData(),
             enableGridLines: true,
-            volumeProp: 1 / sampleData.length,
+            volumeProp: 1 / sampleDateLength,
             decreaseColor: kDangerColor,
             increaseColor: kSuccessColor,
           ),

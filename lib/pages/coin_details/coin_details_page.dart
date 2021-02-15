@@ -1,15 +1,15 @@
 import 'package:crypto_dashboard_ui/models/coin.dart';
-import 'package:crypto_dashboard_ui/pages/coin_detail/widgets/coin_chart.dart';
-import 'package:crypto_dashboard_ui/pages/coin_detail/widgets/coin_stats.dart';
-import 'package:crypto_dashboard_ui/pages/coin_detail/widgets/single_coin_balance.dart';
+import 'package:crypto_dashboard_ui/pages/coin_details/widgets/coin_chart.dart';
+import 'package:crypto_dashboard_ui/pages/coin_details/widgets/coin_stats.dart';
+import 'package:crypto_dashboard_ui/pages/coin_details/widgets/single_coin_balance.dart';
 import 'package:crypto_dashboard_ui/pages/home/widgets/notification_bell.dart';
 import 'package:crypto_dashboard_ui/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class SingleCoin extends StatelessWidget {
+class CoinDetailsPage extends StatelessWidget {
   final Coin coin;
 
-  SingleCoin({@required this.coin});
+  CoinDetailsPage({@required this.coin});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class SingleCoin extends StatelessWidget {
               SizedBox(height: 30),
               CoinChart(),
               SizedBox(height: 15),
-              SingleCoinBalance(),
+              CoinBalance(),
               SizedBox(height: 15),
               Padding(padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
