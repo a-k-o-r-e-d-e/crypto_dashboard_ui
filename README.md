@@ -1,16 +1,23 @@
 # crypto_dashboard_ui
 
-A Crypto Dashboard Ui 
+<h1> Crypto Dashboard Ui </h1> 
 
-## Getting Started
+A Crypto App Dashboard UI implemented in Flutter
 
-This project is a starting point for a Flutter application.
+<h2> ** ScreenShots </h2>
 
-A few resources to get you started if this is your first Flutter project:
+<h5> Home Page </h5>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<h5> Home Screen </h5>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Home Screen](/screenshots/home_page.png)
+
+<h5> Details Screen 1 </h5>
+
+![Coin Details Screen 1](/screenshots/coin_details_1.png)
+
+<h5> Details Screen 2 </h5>
+
+![Details Screen 2](/screenshots/coin_details_2.png)
+
+
