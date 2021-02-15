@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: kPrimaryColor,
           appBarTheme: AppBarTheme(
             elevation: 0,
-            color: kPrimaryColor
+            color: kPrimaryColor,
+            centerTitle: true
           )
         ),
         home: HomePage(),
