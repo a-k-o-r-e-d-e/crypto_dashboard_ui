@@ -8,8 +8,6 @@ A Crypto App Dashboard UI implemented in Flutter
 
 <h5> Home Page </h5>
 
-<h5> Home Screen </h5>
-
 ![Home Screen](/screenshots/home_page.png)
 
 <h5> Details Screen 1 </h5>
